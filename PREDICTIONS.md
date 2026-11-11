@@ -1,7 +1,9 @@
 # Frozen predictions and outcomes
 
 Copied verbatim from the project log. Each block of predictions was frozen (timestamp from the system clock)
-before the run it predicts; the outcomes below were written after scoring with `scripts/score_4j.py`.
+before the run it predicts; the outcomes below were written after scoring with `scripts/score_4j.py`. The
+timestamps are self-reported: this repository's git history starts after both runs, so it cannot confirm them.
+Each run's `env.json` records its start time from the Kaggle machine clock (`start.t`, Unix time): 2026-11-10 21:22:55 UTC (Qwen2.5) and 2026-11-11 07:03:16 UTC (Llama), after the freezes at 17:45:09 and 06:51:59 UTC.
 
 Glossary for the IDs used below:
 - **A, B, C, D:** the builds (`740251a`, `8fc0376`, `8fc0376` without the `__hmul2` branch, `cd4ed90`).

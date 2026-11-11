@@ -74,9 +74,17 @@ Q4_K_M 2.03× → 1.00×.
 
   The two sessions (different T4 instances) give identical operator numbers.
 - **Removing `__hmul2` (C vs B):**
-  - End to end: no effect on Qwen2.5 (ratio 0.975–1.003). On Llama-3.2-3B, Q5_1 goes 1.33× → 1.00× and Q4_1 goes
-    1.13× → 1.04× (decoded).
-  - Perplexity unchanged (±0.03%).
+  - **The effect is mixed.**
+    - Llama-3.2-3B decoded: Q5_1 goes 1.33× → 1.00× and Q4_1 goes 1.13× → 1.04×.
+    - Llama-3.2-3B suffix: Q5_1 1.12× → 1.03×; Q4_1 unchanged.
+    - Qwen2.5 decoded: no effect (ratio 0.975–1.003).
+    - Qwen2.5 suffix: 4–7% higher with C. Q4_1 0.467 → 0.498 and 0.709 → 0.754; Q5_1 0.410 → 0.426 and
+      0.625 → 0.649 (1.5B, 3B).
+  - **Perplexity:** unchanged (NLL ±0.03%). The Qwen Q4_1/Q5_1 decode-vs-batch z values move away from zero with C,
+    for example Q5_1 −0.71 → −1.42 (1.5B) and +0.03 → −1.42 (3B), but every |z| stays below 1.5.
+  - **Caveat for any comparison across builds:** each build decodes its own greedy tokens. Once a build's logits
+    change, the compared token sequences can differ, so differences of a few percent between builds may come from
+    that alone.
   - Speed: llama-bench tg128, Qwen2.5-1.5B, 5 interleaved runs each: Q4_1 161.2 → 161.5 tok/s (+0.18%), Q5_1
     138.5 → 138.5 tok/s (−0.05%). One GPU only.
 - **Master (D)** equals B on every logit and operator number.
@@ -119,7 +127,8 @@ of the quantized codes.
 - **`ppl_paths`.** The second half of each 512-token chunk is scored token by token and as a batch.
 - **`matmul_paths`.** The same weight and activation column go through `mul_mat` with 1 column and with 64.
   Inputs are seeded random, with fixed outlier channels.
-- **Pre-registration.** The pass/fail thresholds were frozen before each run: [PREDICTIONS.md](PREDICTIONS.md).
+- **Pre-registration.** The pass/fail thresholds were written down before each run: [PREDICTIONS.md](PREDICTIONS.md).
+  The timestamps come from the project log and are self-reported; this repository's git history cannot show them.
   - Qwen2.5: 8 of 8 passed.
   - Llama-3.2-3B: 5 passed, 2 partial (both the Q5_1 `__hmul2` effect), none falsified.
 
