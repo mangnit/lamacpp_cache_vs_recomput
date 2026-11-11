@@ -1,0 +1,50 @@
+[07:03:16] pip nvidia-cublas-cu12==12.6.0.22 nvidia-cuda-runtime-cu12==12.6.37 -> rc=0 
+[07:03:21] plan=master builds=('A', 'B', 'C', 'D') GPU: ['Tesla T4, 580.178.04, 7.5, 300 MHz, 1590 MHz, 405 MHz, 50, 10.46 W, 70.00 W, 0x0000000000000001', 'Tesla T4, 580.178.04, 7.5, 300 MHz, 1590 MHz, 405 MHz, 50, 10.65 W, 70.00 W, 0x0000000000000001']
+[07:03:23] matmul_paths A rc=0 3s clocks[690 MHz, 51, 29.21 W, 0x0000000000000000] 
+[07:03:26] matmul_paths B rc=0 3s clocks[585 MHz, 51, 28.92 W, 0x0000000000000000] 
+[07:03:29] matmul_paths C rc=0 3s clocks[660 MHz, 51, 29.61 W, 0x0000000000000000] 
+[07:03:32] matmul_paths D rc=0 3s clocks[585 MHz, 52, 29.41 W, 0x0000000000000000] 
+[07:04:47] downloaded L3B (1 part(s)) in 74s
+[07:05:16] quantize L3B Q4_0 rc=0 
+[07:05:44] quantize L3B Q4_1 rc=0 
+[07:08:54] quantize L3B Q4_K rc=0 
+[07:11:38] quantize L3B Q4_K_M rc=0 
+[07:12:08] quantize L3B Q5_1 rc=0 
+[07:12:44] quantize L3B Q8_0 rc=0 
+[07:13:01] kv_paths A L3B_F16 rc=0 17s clocks[1590 MHz, 50, 35.30 W, 0x0000000000000000] 
+[07:13:12] kv_paths A L3B_Q8_0 rc=0 11s clocks[1590 MHz, 54, 39.33 W, 0x0000000000000000] 
+[07:13:27] kv_paths A L3B_Q4_0 rc=0 15s clocks[1590 MHz, 57, 37.06 W, 0x0000000000000000] 
+[07:13:43] kv_paths A L3B_Q4_1 rc=0 15s clocks[1590 MHz, 59, 38.44 W, 0x0000000000000000] 
+[07:13:52] kv_paths A L3B_Q5_1 rc=0 10s clocks[1590 MHz, 62, 39.43 W, 0x0000000000000000] 
+[07:14:09] kv_paths A L3B_Q4_K_M rc=0 17s clocks[1590 MHz, 65, 41.38 W, 0x0000000000000000] 
+[07:14:26] kv_paths B L3B_F16 rc=0 17s clocks[1590 MHz, 69, 44.31 W, 0x0000000000000000] 
+[07:14:39] kv_paths B L3B_Q8_0 rc=0 12s clocks[1590 MHz, 72, 46.65 W, 0x0000000000000000] 
+[07:14:48] kv_paths B L3B_Q4_0 rc=0 9s clocks[1560 MHz, 73, 44.41 W, 0x0000000000000000] 
+[07:14:57] kv_paths B L3B_Q4_1 rc=0 9s clocks[1590 MHz, 75, 46.06 W, 0x0000000000000000] 
+[07:15:07] kv_paths B L3B_Q5_1 rc=0 11s clocks[1590 MHz, 77, 45.76 W, 0x0000000000000000] 
+[07:15:19] kv_paths B L3B_Q4_K_M rc=0 11s clocks[1590 MHz, 79, 48.20 W, 0x0000000000000000] 
+[07:15:41] kv_paths C L3B_F16 rc=0 22s clocks[1590 MHz, 78, 46.94 W, 0x0000000000000000] 
+[07:15:55] kv_paths C L3B_Q8_0 rc=0 14s clocks[1590 MHz, 76, 46.45 W, 0x0000000000000000] 
+[07:16:04] kv_paths C L3B_Q4_0 rc=0 9s clocks[1590 MHz, 76, 46.55 W, 0x0000000000000000] 
+[07:16:13] kv_paths C L3B_Q4_1 rc=0 9s clocks[1590 MHz, 76, 47.24 W, 0x0000000000000000] 
+[07:16:24] kv_paths C L3B_Q5_1 rc=0 11s clocks[1590 MHz, 77, 48.10 W, 0x0000000000000000] 
+[07:16:35] kv_paths C L3B_Q4_K_M rc=0 11s clocks[1590 MHz, 77, 45.86 W, 0x0000000000000000] 
+[07:16:56] kv_paths D L3B_F16 rc=0 21s clocks[1590 MHz, 77, 48.79 W, 0x0000000000000000] 
+[07:17:10] kv_paths D L3B_Q8_0 rc=0 14s clocks[1590 MHz, 77, 46.65 W, 0x0000000000000000] 
+[07:17:20] kv_paths D L3B_Q4_0 rc=0 10s clocks[1590 MHz, 77, 46.35 W, 0x0000000000000000] 
+[07:17:29] kv_paths D L3B_Q4_1 rc=0 9s clocks[1590 MHz, 77, 45.89 W, 0x0000000000000000] 
+[07:17:40] kv_paths D L3B_Q5_1 rc=0 11s clocks[1590 MHz, 77, 46.65 W, 0x0000000000000000] 
+[07:17:51] kv_paths D L3B_Q4_K_M rc=0 11s clocks[1590 MHz, 77, 49.77 W, 0x0000000000000000] 
+[07:19:31] ppl_paths A L3B_Q4_0 rc=0 100s clocks[1590 MHz, 77, 47.14 W, 0x0000000000000000] 
+[07:21:06] ppl_paths A L3B_Q4_1 rc=0 95s clocks[1590 MHz, 77, 46.08 W, 0x0000000000000000] 
+[07:23:01] ppl_paths A L3B_Q5_1 rc=0 115s clocks[1590 MHz, 77, 47.53 W, 0x0000000000000000] 
+[07:25:01] ppl_paths A L3B_Q4_K rc=0 120s clocks[1350 MHz, 76, 41.48 W, 0x0000000000000000] 
+[07:26:41] ppl_paths B L3B_Q4_0 rc=0 100s clocks[1380 MHz, 76, 42.66 W, 0x0000000000000000] 
+[07:28:16] ppl_paths B L3B_Q4_1 rc=0 96s clocks[1515 MHz, 76, 45.20 W, 0x0000000000000000] 
+[07:30:11] ppl_paths B L3B_Q5_1 rc=0 115s clocks[1425 MHz, 77, 44.71 W, 0x0000000000000000] 
+[07:32:04] ppl_paths B L3B_Q4_K rc=0 113s clocks[1365 MHz, 76, 41.77 W, 0x0000000000000000] 
+[07:33:44] ppl_paths C L3B_Q4_0 rc=0 100s clocks[1590 MHz, 76, 49.11 W, 0x0000000000000000] 
+[07:35:20] ppl_paths C L3B_Q4_1 rc=0 96s clocks[1500 MHz, 76, 45.49 W, 0x0000000000000000] 
+[07:37:15] ppl_paths C L3B_Q5_1 rc=0 115s clocks[1590 MHz, 76, 46.58 W, 0x0000000000000000] 
+[07:39:08] ppl_paths C L3B_Q4_K rc=0 113s clocks[1470 MHz, 76, 42.17 W, 0x0000000000000000] 
+[07:39:09] done
